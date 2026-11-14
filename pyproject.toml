@@ -1,0 +1,38 @@
+[project]
+name = "insurance-bot"
+version = "0.1.0"
+description = "AI-powered insurance lead and quote assistant"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "python-dotenv>=1.0.1",
+    "sqlalchemy>=2.0.31",
+    "uvicorn>=0.30.0",
+    "pydantic>=2.8.2",
+    "pytest>=8.3.2",
+    "langchain-core>=0.3.0",
+    "langchain-groq>=0.2.0",
+    "langgraph>=0.2.0",
+    "httpx>=0.27.0",
+    "streamlit>=1.38.0",
+]
+
+[tool.setuptools]
+packages = [
+    "app",
+    "app.api",
+    "app.agents",
+    "app.db",
+    "app.graphs",
+    "app.mcp_server",
+    "app.repositories",
+    "app.schemas",
+    "app.services",
+    "app.tools",
+    "data",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
